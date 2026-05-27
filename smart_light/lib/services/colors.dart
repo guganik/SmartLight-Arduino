@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 
 class SelectColor {
   final num hue;
-  SelectColor({required this.hue});
+  final int saturation;
+  final int brightness;
+  SelectColor({
+    required this.hue,
+    required this.saturation,
+    required this.brightness,
+  });
 
   final RgbColor lightOffBG_RGB = HsbColor(0, 0, 100).toRgbColor();
-  late final RgbColor lightOnBG_RGB = HsbColor(hue+35, 15, 100).toRgbColor();
+  late final RgbColor lightOnBG_RGB = HsbColor(hue, 15, 100).toRgbColor();
   final RgbColor darkOffBG_RGB = HsbColor(0, 0, 35).toRgbColor();
-  late final RgbColor darkOnBG_RGB = HsbColor(hue+35, 60, 35).toRgbColor();
+  late final RgbColor darkOnBG_RGB = HsbColor(hue, 60, 35).toRgbColor();
 
   Map<String, Color> get backgroundColors => {
     'lightoff': Color.fromRGBO(lightOffBG_RGB.red, lightOffBG_RGB.green, lightOffBG_RGB.blue, 1),
@@ -18,9 +24,9 @@ class SelectColor {
   };
 
   final RgbColor lightOffIcon_RGB = HsbColor(0, 0, 70).toRgbColor();
-  late final RgbColor lightOnIcon_RGB = HsbColor(hue+35, 50, 70).toRgbColor();
+  late final RgbColor lightOnIcon_RGB = HsbColor(hue, 50, 70).toRgbColor();
   final RgbColor darkOffIcon_RGB = HsbColor(0, 0, 70).toRgbColor();
-  late final RgbColor darkOnIcon_RGB = HsbColor(hue+35, 50, 70).toRgbColor();
+  late final RgbColor darkOnIcon_RGB = HsbColor(hue, 50, 70).toRgbColor();
 
   Map<String, Color> get iconColors => {
     'lightoff': Color.fromRGBO(lightOffIcon_RGB.red, lightOffIcon_RGB.green, lightOffIcon_RGB.blue, 1),
@@ -29,10 +35,10 @@ class SelectColor {
     'darkon': Color.fromRGBO(darkOnIcon_RGB.red, darkOnIcon_RGB.green, darkOnIcon_RGB.blue, 1),
   };
 
-  final RgbColor lightOffButton_RGB = HsbColor(0, 0, 80).toRgbColor();
-  late final RgbColor lightOnButton_RGB = HsbColor(hue+35, 30, 100).toRgbColor();
+  final RgbColor lightOffButton_RGB = HsbColor(0, 0, 100).toRgbColor();
+  late final RgbColor lightOnButton_RGB = HsbColor(hue, 30, 100).toRgbColor();
   final RgbColor darkOffButton_RGB = HsbColor(0, 0, 100).toRgbColor();
-  late final RgbColor darkOnButton_RGB = HsbColor(hue+35, 60, 35).toRgbColor();
+  late final RgbColor darkOnButton_RGB = HsbColor(hue, 60, 35).toRgbColor();
 
   Map<String, Color> get buttonColors => {
     'lightoff': Color.fromRGBO(lightOffButton_RGB.red, lightOffButton_RGB.green, lightOffButton_RGB.blue, 1),
@@ -41,10 +47,10 @@ class SelectColor {
     'darkon': Color.fromRGBO(darkOnButton_RGB.red, darkOnButton_RGB.green, darkOnButton_RGB.blue, 1),
   };
 
-  final RgbColor lightOffButtonPlus_RGB = HsbColor(0, 0, 70).toRgbColor();
-  late final RgbColor lightOnButtonPlus_RGB = HsbColor(hue+25, 80, 100).toRgbColor();
-  final RgbColor darkOffButtonPlus_RGB = HsbColor(0, 0, 100).toRgbColor();
-  late final RgbColor darkOnButtonPlus_RGB = HsbColor(hue+25, 80, 100).toRgbColor();
+  final RgbColor lightOffButtonPlus_RGB = HsbColor(0, 0, 60).toRgbColor();
+  late final RgbColor lightOnButtonPlus_RGB = HsbColor(hue, 80, 100).toRgbColor();
+  final RgbColor darkOffButtonPlus_RGB = HsbColor(0, 0, 60).toRgbColor();
+  late final RgbColor darkOnButtonPlus_RGB = HsbColor(hue, 80, 60).toRgbColor();
 
   Map<String, Color> get buttonColorsPlus => {
     'lightoff': Color.fromRGBO(lightOffButtonPlus_RGB.red, lightOffButtonPlus_RGB.green, lightOffButtonPlus_RGB.blue, 1),
@@ -53,10 +59,10 @@ class SelectColor {
     'darkon': Color.fromRGBO(darkOnButtonPlus_RGB.red, darkOnButtonPlus_RGB.green, darkOnButtonPlus_RGB.blue, 1),
   };
 
-  final RgbColor lightOffButtonUI_RGB = HsbColor(0, 0, 100).toRgbColor();
-  late final RgbColor lightOnButtonUI_RGB = HsbColor(hue+35, 100, 70).toRgbColor();
+  final RgbColor lightOffButtonUI_RGB = HsbColor(0, 0, 50).toRgbColor();
+  late final RgbColor lightOnButtonUI_RGB = HsbColor(hue, 100, 70).toRgbColor();
   final RgbColor darkOffButtonUI_RGB = HsbColor(0, 0, 50).toRgbColor();
-  late final RgbColor darkOnButtonUI_RGB = HsbColor(hue+35, 80, 100).toRgbColor();
+  late final RgbColor darkOnButtonUI_RGB = HsbColor(hue, 80, 100).toRgbColor();
 
   Map<String, Color> get buttonUIColors => {
     'lightoff': Color.fromRGBO(lightOffButtonUI_RGB.red, lightOffButtonUI_RGB.green, lightOffButtonUI_RGB.blue, 1),
@@ -66,9 +72,9 @@ class SelectColor {
   };
 
   final RgbColor lightOffShadow_RGB = HsbColor(0, 0, 70).toRgbColor();
-  late final RgbColor lightOnShadow_RGB = HsbColor(hue+35, 80, 70).toRgbColor();
+  late final RgbColor lightOnShadow_RGB = HsbColor(hue, 80, 70).toRgbColor();
   final RgbColor darkOffShadow_RGB = HsbColor(0, 0, 100).toRgbColor();
-  late final RgbColor darkOnShadow_RGB = HsbColor(hue+35, 80, 70).toRgbColor();
+  late final RgbColor darkOnShadow_RGB = HsbColor(hue, 80, 70).toRgbColor();
 
   Map<String, Color> get shadowColors => {
     'lightoff': Color.fromRGBO(lightOffShadow_RGB.red, lightOffShadow_RGB.green, lightOffShadow_RGB.blue, 1),
@@ -78,9 +84,9 @@ class SelectColor {
   };
 
   final RgbColor lightOfffont_RGB = HsbColor(0, 0, 30).toRgbColor();
-  final RgbColor lightOnfont_RGB = HsbColor(0, 0, 30).toRgbColor();
+  late final RgbColor lightOnfont_RGB = HsbColor(hue, 10, 30).toRgbColor();
   final RgbColor darkOfffont_RGB = HsbColor(0, 0, 100).toRgbColor();
-  final RgbColor darkOnfont_RGB = HsbColor(0, 0, 30).toRgbColor();
+  late final RgbColor darkOnfont_RGB = HsbColor(hue, 10, 100).toRgbColor();
 
   Map<String, Color> get fontColors => {
     'lightoff': Color.fromRGBO(lightOfffont_RGB.red, lightOfffont_RGB.green, lightOfffont_RGB.blue, 1),

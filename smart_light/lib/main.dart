@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:smart_light/screens/main_screen.dart';
 // ignore: unused_import
-import 'package:smart_light/screens/select_color.dart';
-// ignore: unused_import
 import 'screens/load_screen.dart';
 
 void main() {
@@ -16,6 +14,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Smart Light',
       home: LoadScreen(),
+      // home: MainScreen(
+      //   currentColorTheme: 'dark',
+      //   currentPowerTheme: 'off',
+      //   hue: 120,
+      //   saturation: 100,
+      //   brightness: 100,
+      //   powerOn: false,
+      //   connectedDevice: null
+      // ),
       debugShowCheckedModeBanner: true,
     );
   }
